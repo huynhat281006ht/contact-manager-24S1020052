@@ -31,3 +31,15 @@ def add_contact(name: str, phone: str) -> None:
     contact = {'name': name.strip(), 'phone': phone.strip()}
     phonebook.append(contact)
     print(f"Đã thêm liên hệ: {contact['name']} - {contact['phone']}")
+
+def view_contacts() -> None:
+    """
+    In ra toàn bộ danh bạ. Nếu rỗng, báo rỗng.
+    """
+    if not phonebook:
+        print("Danh bạ rỗng.")
+        return
+    print("\n--- DANH BẠ ---")
+    for idx, c in enumerate(phonebook, start=1):
+        print(f"{idx}. {c['name']} - {c['phone']}")
+    print("---------------")
