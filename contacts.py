@@ -31,3 +31,14 @@ def add_contact(name: str, phone: str) -> None:
     contact = {'name': name.strip(), 'phone': phone.strip()}
     phonebook.append(contact)
     print(f"Đã thêm liên hệ: {contact['name']} - {contact['phone']}")
+
+def interactive_add_contact() -> None:
+    name = input("Nhập tên: ").strip()
+    phone = input("Nhập số điện thoại: ").strip()
+    if not name:
+        print("Tên không được để trống.")
+        return
+    if not phone:
+        print("Số điện thoại không được để trống.")
+        return
+    add_contact(name, phone)
