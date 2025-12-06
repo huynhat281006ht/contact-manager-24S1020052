@@ -22,3 +22,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def add_contact(name: str, phone: str) -> None:
+    """
+    Thêm 1 liên hệ mới vào phonebook.
+    Không kiểm tra trùng lặp (có thể mở rộng).
+    """
+    contact = {'name': name.strip(), 'phone': phone.strip()}
+    phonebook.append(contact)
+    print(f"Đã thêm liên hệ: {contact['name']} - {contact['phone']}")
