@@ -41,5 +41,14 @@ def view_contacts() -> None:
         return
     print("\n--- DANH BẠ ---")
     for idx, c in enumerate(phonebook, start=1):
-        print(f"{idx}. {c['name']} - {c['phone']}")
+        print(f"{idx}. {c['name']} - {c['phone']}"
     print("---------------")
+
+def search_contact(name: str) -> list:
+    """
+    Tìm các liên hệ có tên khớp (so sánh không phân biệt hoa/thường).
+    Trả về danh sách các contact tìm được.
+    """
+    name_query = name.strip().lower()
+    results = [c for c in phonebook if c['name'].lower() == name_query]
+    return results
